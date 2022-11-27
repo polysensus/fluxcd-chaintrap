@@ -1,0 +1,27 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  # metadata is used to match the target to patch
+  name: chaintrap-maptool
+spec:
+  patches:
+    - target:
+        kind: IngressRoute
+        name: chaintrap-maptool
+      patch: |-
+        - op: replace
+          path: /spec/routes/0/match
+          value: Host(`chaintrap.hoy.polysensus.io`) && PathPrefix(`/chaintrap/maptool/`) && Method(`GET`)
+        - op: replace
+          path: /spec/routes/1/match
+          value: Host(`chaintrap.hoy.polysensus.io`) && PathPrefix(`/chaintrap/maptool/`) && Method(`POST`, `PUT`, `PATCH`, `DELETE`)
+        - op: replace
+          path: /spec/tls/secretName
+          value: chaintrap-hoy-polysensus-io
+    - target:
+        kind: Middleware
+        name: chaintrap-maptool-strip-ingressroute-prefix
+      patch: |-
+        - op: replace
+          path: /spec/stripPrefix/prefixes/0
+          value: /chaintrap/maptool/

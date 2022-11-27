@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: "chaintrap-hoy-polysensus-io"
+spec:
+  commonName: "chaintrap.hoy.thaumagen.io"
+  secretName: chaintrap-hoy-polysensus-io
+  dnsNames:
+    - "chaintrap.hoy.thaumagen.io"
+    - "*.chaintrap.hoy.thaumagen.io"
+  issuerRef:
+    name: letsencrypt-staging-primary-dns
+    kind: ClusterIssuer

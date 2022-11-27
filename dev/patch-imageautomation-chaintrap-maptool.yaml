@@ -1,0 +1,10 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  # metadata is used to match the target to patch
+  name: chaintrap-maptool
+spec:
+  images:
+  - name: chaintrap-maptool
+    newName: eu.gcr.io/hoy-1/chaintrap-maptool
+    newTag: main-8 # {"$imagepolicy": "stage-chaintrap:chaintrap-maptool-main:tag"}

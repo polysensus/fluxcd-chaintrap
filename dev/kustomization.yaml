@@ -1,0 +1,11 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../base
+  - ./secret-chaintrap-maptoolsealed.yaml
+patchesStrategicMerge:
+  # Override the base source kz builds so that the resources we build are put in ns stage-iona-iam
+  - ./patch-patch-ingressroute-chaintrap-maptool.yaml
+  - ./patch-targetnamespace-chaintrap-maptool.yaml
+  - ./patch-imageautomation-chaintrap-maptool.yaml
+
