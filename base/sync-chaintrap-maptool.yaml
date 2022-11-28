@@ -5,9 +5,10 @@ metadata:
   name: chaintrap-maptool
 spec:
   interval: 2m
-  url: ssh://git@github.com/polysensus/chaintrap-maptool.git
+  # url: https://github.com/polysensus/chaintrap-maptool
   ref:
     branch: main
+  url: ssh://git@github.com/polysensus/chaintrap-maptool.git
   secretRef:
     name: chaintrap-maptool
 
