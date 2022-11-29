@@ -9,5 +9,5 @@ spec:
     - "chaintrap.hoy.polysensus.io"
     - "*.chaintrap.hoy.polysensus.io"
   issuerRef:
-    name: letsencrypt-staging-primary-dns
+    name: letsencrypt-prod-primary-dns
     kind: ClusterIssuer
