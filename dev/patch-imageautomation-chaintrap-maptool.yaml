@@ -7,4 +7,4 @@ spec:
   images:
   - name: chaintrap-maptool
     newName: eu.gcr.io/hoy-dev-1/chaintrap-maptool
-    newTag: main-23 # {"$imagepolicy": "chaintrap:chaintrap-maptool-main:tag"}
+    newTag: main-24 # {"$imagepolicy": "chaintrap:chaintrap-maptool-main:tag"}
