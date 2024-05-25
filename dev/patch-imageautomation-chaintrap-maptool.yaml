@@ -4,6 +4,7 @@ metadata:
   # metadata is used to match the target to patch
   name: chaintrap-maptool
 spec:
+  serviceAccountName: chaintrap
   images:
   - name: chaintrap-maptool
     newName: eu.gcr.io/hoy-dev-1/chaintrap-maptool

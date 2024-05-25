@@ -6,4 +6,5 @@ metadata:
   # metadata is used to match the target to patch
   name: chaintrap-maptool
 spec:
+  serviceAccountName: chaintrap
   targetNamespace: chaintrap
